@@ -1,17 +1,18 @@
 package org.qwertech.invest;
 
+import io.github.jhipster.config.JHipsterConstants;
 import org.qwertech.invest.config.ApplicationProperties;
 import org.qwertech.invest.config.DefaultProfileUtil;
-
-import io.github.jhipster.config.JHipsterConstants;
-
+import org.qwertech.invest.feign.TinkoffFeign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.*;
+import org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration;
+import org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
 
@@ -24,6 +25,7 @@ import java.util.Collection;
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
+@EnableFeignClients(basePackageClasses = TinkoffFeign.class)
 public class InvestApp {
 
     private static final Logger log = LoggerFactory.getLogger(InvestApp.class);
