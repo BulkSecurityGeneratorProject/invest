@@ -19,6 +19,9 @@
     <!-- endbuild -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
+    <link rel="stylesheet" href="kendo/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="kendo/styles/kendo.bootstrap-v4.min.css" />
+    <link rel="stylesheet" href="kendo/styles/kendo.bootstrap.mobile.min.css" />
 </head>
 <body ng-app="investApp" ng-strict-di>
     <!--[if lt IE 9]>
@@ -57,11 +60,14 @@
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>-->
 
+
     <!-- build:js app/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/messageformat/messageformat.js"></script>
+    <script src="bower_components/highcharts/highcharts.src.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.src.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -75,8 +81,11 @@
     <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
+
+    <script src="kendo/js/kendo.all.min.js"></script>
 
     <!-- build:js app/app.js  -->
     <!-- inject:js -->

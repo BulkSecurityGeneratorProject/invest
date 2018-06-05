@@ -6,14 +6,14 @@
       <!--directive: start--><!--directive: end-->
       <h6 class="text-right" ng-bind="controllerMessage"></h6>
 
-      <h1 class="text-capitalize text-center" data-translate="cci.title">Title</h1>
-
-      <h5 class="text-center" data-translate="cci.subtitle">Subtitle</h5>
+      <h1 class="text-capitalize text-center" data-translate="cci.title">Commodity channel index</h1>
 
       <hr/>
 
       <p class="text-justify" data-translate="cci.content">
-        Content
+          <kendo-grid options="mainGridOptions">
+          </kendo-grid>
+          <highchart id="chart1" config="chartConfig"></highchart>
       </p>
 
     </div>

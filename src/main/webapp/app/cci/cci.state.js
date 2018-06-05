@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -14,6 +14,13 @@
             data: {
                 authorities: [],
                 pageTitle: 'global.menu.cci'
+            },
+            resolve: {
+                chartData: function ($http) {
+                    return $http.get('/api/stocks-resource/get-stocks').then(function (response) {
+                        return response.data;
+                    });
+                }
             },
             views: {
                 'content@': {
